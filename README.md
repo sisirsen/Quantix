@@ -18,7 +18,6 @@ https://quantix-mu.vercel.app/
 # Tech Stack
 
 * React
-* JavaScript
 * Tailwind CSS 
 * HTML
 
