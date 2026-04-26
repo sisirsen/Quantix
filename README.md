@@ -33,6 +33,14 @@ https://quantix-mu.vercel.app/
   * `X` → Deletes last character
   * `=` → Evaluates the expression
 
+  # Screenshots
+  # Normal Look
+  ![normalLook](../Quantix/src/assets/Readme/normalLook.png)
+
+  # FullPage Look
+
+  ![FullPageLook](../Quantix/src/assets/Readme/FullPage.png)
+
 # Learning Outcomes
 
 This project helped in understanding:
