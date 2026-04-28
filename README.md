@@ -35,11 +35,11 @@ https://quantix-mu.vercel.app/
 
   # Screenshots
   # Normal Look
-  ![normalLook](../Quantix/src/assets/Readme/normalLook.png)
+  ![normalLook](./src/assets/Readme/normalLook.png)
 
   # FullPage Look
 
-  ![FullPageLook](../Quantix/src/assets/Readme/FullPage.png)
+  ![FullPageLook](./src/assets/Readme/FullPage.png)
 
 # Learning Outcomes
 
