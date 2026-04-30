@@ -45,10 +45,8 @@ function App() {
   else if (e.key==="Enter") {
     result()
   } 
-  
- 
-
 }
+
      useEffect(() => {
     document.addEventListener("keydown", keyClick);
       return () => {
