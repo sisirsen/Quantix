@@ -1,5 +1,6 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+
 
 function App() {
   
@@ -7,23 +8,53 @@ function App() {
   
 
     const click =(value)=>{
-      setInput((input)=>input+value)
+      setInput(input=>input+value)
       
     }
     const delte =()=>{
       setInput((input)=> input.slice(0, -1))
     }
     const clear=()=>{
-      setInput((input)=>input="")
+      setInput("")
     }
     const result=()=>{
       try {
-        const result = eval(input);
-        setInput(result.toString())
+        setInput(eval(input).toString())
       } catch (error) {
         setInput("Error")
       }
     }
+
+  const keyClick=(e)=>{
+
+    if (e.key === " ") {
+    setInput("");
+    return;
+  }
+
+      if (!isNaN(e.key)) {
+    setInput(input => input + e.key);
+  }
+ 
+  else if (e.key==="Backspace") {
+   setInput(input=>input.slice(0,-1))
+  }
+  else if (e.key==="+" ||e.key=== "." ||e.key=== "/" ||e.key=== "*" || e.key==="-") {
+    setInput(input=>input+e.key)
+  }
+  else if (e.key==="Enter") {
+    result()
+  } 
+  
+ 
+
+}
+     useEffect(() => {
+    document.addEventListener("keydown", keyClick);
+      return () => {
+    document.removeEventListener("keydown", keyClick);
+  }}, [keyClick])
+
 
 
   return (
@@ -40,7 +71,7 @@ function App() {
         className='text-black caret-blue-700 text-2xl outline-none border-[3px] p-2 w-full  rounded-lg border-black' type="text" placeholder='0' /></div>
         <div className='flex flex-wrap mt-6 gap-6 items-center justify-center'>
 
-        <div onClick={()=> {click("7")}} className='h-13 w-13 flex justify-center items-center rounded-2xl text-2xl cursor-pointer hover:bg-blue-500 bg-blue-400'>7</div>
+        <div onClick={()=> {click("7")}}  className='h-13 w-13 flex justify-center items-center rounded-2xl text-2xl cursor-pointer hover:bg-blue-500 bg-blue-400'>7</div>
 
         <div onClick={()=> {click("8")}} className='h-13 w-13 flex justify-center items-center rounded-2xl text-2xl cursor-pointer hover:bg-blue-500 bg-blue-400'>8</div>
 
@@ -75,7 +106,7 @@ function App() {
         <div onClick={()=> {click("3")}} className='h-13 w-13 flex justify-center items-center rounded-2xl text-2xl cursor-pointer hover:bg-blue-500 bg-blue-400'>3</div>
 
 
-        <div onClick={()=> {click("-")}} aria-disabled={click==1}  className='h-13 w-13 flex justify-center items-center rounded-2xl text-2xl cursor-pointer hover:bg-blue-500 bg-blue-400'>➖</div>
+        <div onClick={()=> {click("-")}}  className='h-13 w-13 flex justify-center items-center rounded-2xl text-2xl cursor-pointer hover:bg-blue-500 bg-blue-400'>➖</div>
 
         <div onClick={()=> {click("+")}} className='h-13 w-13 flex justify-center items-center rounded-2xl text-2xl cursor-pointer hover:bg-blue-500 bg-blue-400'>➕</div>
 
