@@ -14,6 +14,7 @@ https://quantix-mu.vercel.app/
 * Support for parentheses `()` for complex expressions
 * Responsive and minimal UI design
 * Keyboard access (Get numbers on button(0,1,2,3,4,5,6,7,8,9) click, *Backspace* is deleting the last number, Clear the input field on *Spacebar* and *Enter* will give result)
+* Dark mode on Logo button click.
 
 
 # Tech Stack
